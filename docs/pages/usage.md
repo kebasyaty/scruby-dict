@@ -3,7 +3,7 @@ import anyio
 from typing import Any
 from pydantic import Field
 from scruby import Scruby, ScrubyModel, ScrubySettings
-from scruby_return_dict import ReturnDict
+from scruby_dict import ReturnDict
 from pprint import pprint as pp
 
 # Plugins connection.

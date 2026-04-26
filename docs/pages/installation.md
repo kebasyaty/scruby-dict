@@ -1,3 +1,3 @@
 ```shell
-uv add scruby-return-dict
+uv add scruby-dict
 ```

@@ -948,7 +948,7 @@ wheels = [
 ]
 
 [[package]]
-name = "scruby-return-dict"
+name = "scruby-dict"
 version = "0.2.7"
 source = { editable = "." }
 dependencies = [
