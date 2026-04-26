@@ -6,14 +6,14 @@ from typing import Any
 
 import pytest
 from pydantic import Field
-from scruby import Scruby, ScrubyModel, ScrubySettings
+from scruby import Scruby, ScrubyConfig, ScrubyModel
 
 from scruby_dict import ReturnDict
 
 pytestmark = pytest.mark.asyncio(loop_scope="module")
 
 # Plugins connection.
-ScrubySettings.plugins = [
+ScrubyConfig.plugins = [
     ReturnDict,
 ]
 
