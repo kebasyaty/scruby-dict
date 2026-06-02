@@ -44,7 +44,7 @@ async def main() -> None:
         await car_coll.add_doc(car)
 
     # Find one car
-    car_dict: dict[str, Any] | None = await car_coll.plugins.returnDict.find_one(c
+    car_dict: dict[str, Any] | None = await car_coll.plugins.returnDict.find_one(
         filter_fn=lambda doc: doc.brand == "Mazda" and doc.model == "EZ-6 9",
     )
     if car_dict is not None:
