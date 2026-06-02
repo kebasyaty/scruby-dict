@@ -35,7 +35,7 @@ jobs:
         run: uv sync --locked --dev --group test
 
       - name: Install Pyrefly
-        run: pip install pyrefly
+        run: pip install pyrefly && pyrefly init
 
       - uses: pre-commit/action@v3.0.1
 
