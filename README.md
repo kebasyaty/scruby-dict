@@ -8,7 +8,7 @@
     </a>
   </p>
   <p>
-    <h1>scruby-dict</h1>
+    <h1>Scruby-Dict</h1>
     <h3>Plugin for Scruby - In search methods, returns result as dictionaries.</h3>
     <p align="center">
       <a href="https://github.com/kebasyaty/scruby-dict/actions/workflows/test.yml" alt="Build Status"><img src="https://github.com/kebasyaty/scruby-dict/actions/workflows/test.yml/badge.svg" alt="Build Status"></a>
