@@ -211,6 +211,7 @@ class ReturnDict(ScrubyPlugin):
                 if stop_outer_loop:
                     break
         # Sorting
-        result.sort(key=sort_fn, reverse=sort_reverse)
+        if sort_fn is not None:
+            result.sort(key=sort_fn, reverse=sort_reverse)
         # Return a document list
         return result or None
