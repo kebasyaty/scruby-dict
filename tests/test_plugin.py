@@ -58,7 +58,6 @@ class TestPositive:
         car_dict: dict[str, Any] | None = await car_coll.plugins.returnDict.find_one(
             filter_fn=lambda doc: doc.brand == "Mazda",
         )
-
         assert car_dict is not None
         assert isinstance(car_dict, dict)
         assert car_dict["brand"] == "Mazda"
@@ -66,10 +65,15 @@ class TestPositive:
         car_2_dict: dict[str, Any] | None = await car_coll.plugins.returnDict.find_one(
             filter_fn=lambda doc: doc.brand == "Mazda" and doc.model == "EZ-6 9",
         )
-
         assert car_2_dict is not None
         assert isinstance(car_2_dict, dict)
         assert car_2_dict["model"] == "EZ-6 9"
+
+        # result is None
+        car_3_dict: dict[str, Any] | None = await car_coll.plugins.returnDict.find_one(
+            filter_fn=lambda doc: doc.brand == "???",
+        )
+        assert car_3_dict is None
         #
         # Delete DB.
         Scruby.napalm()
@@ -93,7 +97,6 @@ class TestPositive:
             await car_coll.add_doc(car)
         # Find a car
         car_list: list[dict[str, Any]] | None = await car_coll.plugins.returnDict.find_many()
-
         assert car_list is not None
         assert isinstance(car_list, list)
         assert len(car_list) == 9
@@ -102,7 +105,6 @@ class TestPositive:
         car_2_list: list[dict[str, Any]] | None = await car_coll.plugins.returnDict.find_many(
             filter_fn=lambda doc: doc.brand == "Mazda",
         )
-
         assert car_2_list is not None
         assert isinstance(car_2_list, list)
         assert len(car_2_list) == 9
@@ -111,10 +113,15 @@ class TestPositive:
         car_3_list: list[dict[str, Any]] | None = await car_coll.plugins.returnDict.find_many(
             filter_fn=lambda doc: doc.brand == "Mazda" and doc.model == "EZ-6 9",
         )
-
         assert car_3_list is not None
         assert isinstance(car_3_list, list)
         assert car_3_list[0]["model"] == "EZ-6 9"
+
+        # result is None
+        car_4_list: list[dict[str, Any]] | None = await car_coll.plugins.returnDict.find_many(
+            filter_fn=lambda doc: doc.brand == "???",
+        )
+        assert car_4_list is None
         #
         # Delete DB.
         Scruby.napalm()
